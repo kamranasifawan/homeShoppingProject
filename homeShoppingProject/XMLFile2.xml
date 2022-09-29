@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Automation>
+	<Execution>
+		<LoginWithValidUserValidPassword>
+			<username>AmirTester</username>
+			<password>AmirTester</password>				
+		</LoginWithValidUserValidPassword>
+		<LoginWithValidUserValidPassword>
+			<username>kamranasifawan@gmail.com</username>
+			<password>65xCaXUwEi2XCE@</password>
+		</LoginWithValidUserValidPassword>
+	</Execution>
+</Automation>

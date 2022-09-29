@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Automation>
+	<Execution>
+		<LoginWithValidUserValidPassword>
+			
+			<username>AmirTester</username>
+			<password>AmirTester</password>
+			<adress>lahore</adress>
+			<firstname>kamran</firstname>
+			<lastname>kamran</lastname>
+			<city>Lahore</city>
+			<country>Pakistan</country>
+			<phoneNo>4596542</phoneNo>
+			<mobileCode>0341</mobileCode>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>
+		</LoginWithValidUserValidPassword>
+
+	</Execution>
+</Automation>
