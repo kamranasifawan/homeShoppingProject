@@ -7,12 +7,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace homeShoppingProject
-
 {
     public class SignUpPage : BasePage
     {
-        
-
         By SignUpForm = By.XPath("//a[@class='dpdn newcusbtn nanp p0']");
         By email = By.Id("FormField_1");
         By pass = By.Id("FormField_2");
@@ -24,8 +21,6 @@ namespace homeShoppingProject
         By phoneNo = By.XPath("//input[@class='custom_mobile_number number_field']");
         By mobileCode = By.XPath("//select[@class='custom_mobile_code']");
         By createButton = By.XPath("//input[@value='CREATE ACCOUNT']");
-       
-        
         public void signUp(string email1, string password, string address1, string fname, string lname, string city1, string country1, string phnNUM, string code)
         {
             Click(SignUpForm);
@@ -40,6 +35,5 @@ namespace homeShoppingProject
             dropDown(mobileCode, code);
             Click(createButton);
         }
-       
     }
 }

@@ -9,12 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace homeShoppingProject
 {
-
     public class BasePage
     {
+        public TestContext instance;
+        public TestContext TestContext
+        {
+            set { instance = value; }
+            get { return instance; }
+        }
         public static IWebDriver driver;
         public IWebDriver openBrowser(string Browser)
         {
@@ -40,39 +46,35 @@ namespace homeShoppingProject
         }
         public static void CloseDriver()
         {
-
             driver.Quit();
-
         }
         public void Write(By by, string value)
         {
-
             driver.FindElement(by).SendKeys(value);
-
         }
         public void Click(By by)
         {
-
             driver.FindElement(by).Click();
-
         }
         public void Clear(By by)
         {
-
             driver.FindElement(by).Clear();
-
         }
         public void OpenUrl(string url)
         {
-
             driver.Url = url;
-
         }
         public void dropDown(By by, string value)
         {
             IWebElement drpDown = driver.FindElement(by);
             SelectElement dropDownMenu = new SelectElement(drpDown);
             dropDownMenu.SelectByValue(value);
+        }
+         public void checkBox(By by)
+        {
+            IWebElement element = driver.FindElement(by);
+            Actions action = new Actions(driver);
+            action.Click(element).Build().Perform();
         }
     }
 }
