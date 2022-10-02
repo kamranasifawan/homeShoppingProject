@@ -63,6 +63,8 @@
     <Compile Include="BasePage.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="loginPage.cs" />
+    <Compile Include="menuBar.cs" />
+    <Compile Include="search.cs" />
     <Compile Include="signUpPage1.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,6 +11,8 @@ namespace homeShoppingProject
     {
         SignUpPage signUpObj = new SignUpPage();
         LoginPage loginObj = new LoginPage();
+        searchBar searchObj= new searchBar();
+        menuBar menuObj= new menuBar();
         [AssemblyInitialize()]
         public static void AssemblyInit(TestContext context)
         {
@@ -38,24 +40,32 @@ namespace homeShoppingProject
         [TestCleanup()]
         public void TestCleanUp()
         {
-            Thread.Sleep(5000);
-            BasePage.CloseDriver();
+            //Thread.Sleep(5000);
+            //BasePage.CloseDriver();
         }
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "C:\\Users\\asiffkam\\source\\repos\\homeShoppingProject\\homeShoppingProject\\XMLFile2.xml",
-            "LoginWithValidUserValidPassword", DataAccessMethod.Sequential)]
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "C:\\Users\\asiffkam\\source\\repos\\homeShoppingProject\\homeShoppingProject\\XMLFile2.xml",
+        //    "LoginWithValidUserValidPassword", DataAccessMethod.Sequential)]
         [TestMethod]
         public void Login()
         {
             
-            string email1, password;
-            email1 = TestContext.DataRow[0].ToString();
-            password = TestContext.DataRow[1].ToString();
-            loginObj.login(email1, password);           
+            //string email1, password;
+            //email1 = TestContext.DataRow[0].ToString();
+            //password = TestContext.DataRow[1].ToString();
+            //loginObj.login(email1, password);           
+            loginObj.login("kamranasifawan@gmail.com", "65xCaXUwEi2XCE@");           
         }
-        public TestContext GetTestContext()
+        [TestMethod]
+        public void finde()
         {
-            return TestContext;
-        }        
+            searchObj.search("Samsung Galaxy S22");
+        }
+        [TestMethod]
+        public void menu()
+        {
+            menuObj.menu();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "C:\\Users\\asiffkam\\source\\repos\\homeShoppingProject\\homeShoppingProject\\XMLFile1.xml",
             "LoginWithValidUserValidPassword", DataAccessMethod.Sequential)]
         [TestMethod]
