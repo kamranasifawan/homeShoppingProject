@@ -13,6 +13,7 @@ namespace homeShoppingProject
         LoginPage loginObj = new LoginPage();
         searchBar searchObj= new searchBar();
         menuBar menuObj= new menuBar();
+        filterPage filterObj= new filterPage();
         [AssemblyInitialize()]
         public static void AssemblyInit(TestContext context)
         {
@@ -35,7 +36,9 @@ namespace homeShoppingProject
             BasePage browser = new BasePage();
             IWebDriver driver1 = browser.openBrowser("Chrome");           
             driver = driver1;
+            log.Info("enter url");
             OpenUrl("https://homeshopping.pk/");
+            log.Info("URL is :"+driver.Url);
         }
         [TestCleanup()]
         public void TestCleanUp()
@@ -64,6 +67,12 @@ namespace homeShoppingProject
         public void menu()
         {
             menuObj.menu();
+        }
+        [TestMethod]
+        public void filter()
+        {
+            menuObj.menu();
+            filterObj.filter("pricedesc");
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "C:\\Users\\asiffkam\\source\\repos\\homeShoppingProject\\homeShoppingProject\\XMLFile1.xml",

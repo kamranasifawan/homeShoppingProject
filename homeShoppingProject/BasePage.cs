@@ -15,6 +15,8 @@ namespace homeShoppingProject
 {
     public class BasePage
     {
+        public static readonly log4net.ILog log =log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public TestContext instance;
         public TestContext TestContext
         {
@@ -51,6 +53,7 @@ namespace homeShoppingProject
         public void Write(By by, string value)
         {
             driver.FindElement(by).SendKeys(value);
+            log.Info("text write successfuly");
         }
         public void Click(By by)
         {

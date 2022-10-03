@@ -17,8 +17,12 @@ namespace homeShoppingProject
         public void login(string email1, string password)
         {
             Click(loginForm);
+            log.Info("enter email");
             Write(email, email1);
+            log.Info("enter email"+ email1);
+            log.Info("enter password");
             Write(pass, password);
+            log.Info("enter password"+password);
             Click(loginButton);
         }
     }
