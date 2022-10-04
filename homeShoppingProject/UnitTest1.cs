@@ -3,6 +3,8 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System;
 using System.Threading;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
 
 namespace homeShoppingProject
 {
@@ -25,10 +27,13 @@ namespace homeShoppingProject
         [ClassInitialize()]
         public static void ClassInit(TestContext context)
         {
+            
+            //LogReport("TestReport");
         }
         [ClassCleanup()]
         public static void ClassCleanup()
         {
+           // extentReports.Flush();
         }
         [TestInitialize()]
         public void TestInit()
@@ -51,12 +56,14 @@ namespace homeShoppingProject
         [TestMethod]
         public void Login()
         {
-            
             //string email1, password;
             //email1 = TestContext.DataRow[0].ToString();
             //password = TestContext.DataRow[1].ToString();
             //loginObj.login(email1, password);           
-            loginObj.login("kamranasifawan@gmail.com", "65xCaXUwEi2XCE@");           
+            loginObj.login("kamranasifawan@gmail.com", "65xCaXUwEi2XCE@");
+            ExtentStart();
+            test = null;
+            test = extent.CreateTest("T001").Info("Login Test");
         }
         [TestMethod]
         public void finde()
